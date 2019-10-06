@@ -1,0 +1,176 @@
+body .ui-inputtext{
+    width: 300px !important;
+    border: 2px solid #a6a6a6 !important;
+}
+
+.ui-progress-spinner {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display:block;
+}
+
+.ui-progress-spinner::before{
+    padding-top: 0%;
+}
+
+.autocomplete{
+    margin: 2% 45%;
+}
+
+.wrapper{
+    margin-top: 20px;
+}
+
+.weatherDisplayBox{
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+    border: 2px solid #dcd8d8;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: -1px 7px 20px 0px #7d7c7c;
+}
+
+.favoriteBtnChecked{
+    background: #d81f1f;
+    border: 1px solid #d81f1f;
+    border-radius: 50px;
+}
+
+.favoriteBtn{
+    background: gray;
+    border: 1px solid gray;
+    border-radius: 50px;
+}
+
+.cityName{
+    font-size: 25px;
+    margin-bottom: 3%;
+}
+
+.weatherText{
+    font-size: 20px;
+    margin-bottom: 10%;
+    display: block;
+}
+
+.tempAndUnit{
+    font-size: 50px;
+}
+
+.iconContainer{
+    height: 70px;
+    margin: 5%;
+    margin-bottom: 25%;
+}
+
+.icon{
+    height: 125px;
+}
+
+.iconMini{
+    height: 25px;
+}
+
+.divider{
+    border: 1px dashed black;
+    margin: 5%;
+}
+
+.dayBox{
+    font-size: 15px;
+}
+
+.fivaDayTitle{
+    font-size: 15px;
+}
+
+@media only screen and (min-width: 600px){
+    .weatherDisplayBox{
+        width: 90%;
+        padding: 30px;
+    }
+    
+    .cityName{
+        font-size: 35px;
+        margin-bottom: 3%;
+    }
+    
+    .weatherText{
+        font-size: 28px;
+        margin-bottom: 10%;
+        display: block;
+    }
+    
+    .tempAndUnit{
+        font-size: 70px;
+    }
+    
+    .iconContainer{
+        height: 60px;
+        margin-bottom: 20%;
+    }
+    
+    .icon{
+        height: 160px;
+    }
+
+    .iconMini{
+        height: 40px;
+    }
+    
+    .divider{
+        border: 1px dashed black;
+        margin: 2%;
+    }
+
+    .dayBox{
+        font-size: 22px;
+        padding: 10px;
+    }
+
+    .fivaDayTitle{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .weatherDisplayBox{
+        margin-top: 0%;
+        width: 95%;
+    }    
+    
+    .cityName{
+        margin-bottom: 2%;
+    }
+    
+    .weatherText{
+        margin-bottom: 4%;
+    }
+    
+    .tempAndUnit{
+        font-size: 70px;
+    }
+    
+    .iconContainer{
+        height: 50px;
+        margin-bottom: 10%;
+    }
+    
+    .icon{
+        height: 160px;
+    }
+
+    .iconMini{
+        height: 50px;
+    }
+    
+    .dayBox{
+        padding: 10px 50px;
+    }
+}

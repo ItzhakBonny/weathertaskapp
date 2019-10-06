@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body .ui-toolbar {
+    border: none;
+    background: none;
+}
+
+.ui-toolbar button{
+    margin: 5px;
+    font-weight: 600;
+}

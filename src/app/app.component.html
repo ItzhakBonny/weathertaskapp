@@ -1,0 +1,16 @@
+<div>
+  <p-toolbar *ngIf="mdScreen || lgScreen" class="p-grid p-justify-end">
+    <button pButton type="button" label="Home" routerLink="/home"></button>
+    <button pButton type="button" label="favorites" routerLink="/favorites"></button>
+  </p-toolbar>
+  <button *ngIf="smScreen" class="sideBarBtn" type="text" (click)="display = true" pButton icon="pi pi-bars"></button>
+  <p-sidebar [style]="{width:'45%'}" *ngIf="smScreen" [(visible)]="display" position="right">
+    <div class="p-grid">
+      <button pButton type="button" label="Home" routerLink="/home" (click)="display = false"></button>
+      <button pButton type="button" label="favorites" routerLink="/favorites" (click)="display = false"></button>
+    </div>
+  </p-sidebar>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>

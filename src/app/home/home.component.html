@@ -1,0 +1,55 @@
+<div class="wrapper">
+    <div class="p-grid p-justify-center">
+        <p-autoComplete [(ngModel)]="selectedCity" [suggestions]="suggestions"
+            [(ngModel)]="selectedCity" (completeMethod)="autoComplete($event)" field="LocalizedName"
+            class="autocomplete" (onSelect)="getCityData()" [inputStyleClass]="autoComplete"
+            [emptyMessage]="emptyMessage"></p-autoComplete>
+    </div>
+    <div class="weatherDisplayBox" *ngIf="!isCurrentWaiting && !isForecastWaiting">
+        <div class="p-grid p-justify-end">
+            <div>
+                <button [ngClass]="{'favoriteBtn': !isFavorite , 'favoriteBtnChecked': isFavorite}" class="favoriteBtn"
+                    pButton type="button" icon="pi pi-heart" (click)="addRemoveFavorite()"></button>
+                <button pButton type="button" label="C/F" (click)="CelcuisToFahrenheit()" class="favoriteBtn"></button>
+            </div>
+        </div>
+        <div>
+            <div class="iconContainer">
+                <img class="icon" src="/assets/weatherIcons/{{currentCondition.WeatherIcon}}-s.png" alt="weather icon">
+            </div>
+            <div>
+                <span class="tempAndUnit">{{displayTemp.Value}}
+                    {{displayTemp.Unit}}</span>
+            </div>
+            <div class="cityName">
+                <span>{{selectedCity.LocalizedName}}</span>
+            </div>
+            <div class="weatherText">
+                <span>{{currentCondition.WeatherText}}</span>
+            </div>
+        </div>
+        <div class="fivaDayTitle"><span>next 5 days</span></div>
+        <div class="divider"></div>
+        <div class="p-grid p-justify-between">
+            <div *ngFor="let day of fiveDayForecast.DailyForecasts" class="dayBox">
+                <p>{{day.Date | date: 'EEE'}}</p>
+                <img class="iconMini" src="/assets/weatherIcons/{{currentCondition.WeatherIcon}}-s.png"
+                    alt="weather icon">
+                <p>{{day.Temperature.Minimum.Value}} {{day.Temperature.Maximum.Unit}}</p>
+            </div>
+        </div>
+    </div>
+
+
+    <p-dialog [(visible)]="errorDisplay">
+        <p-header>
+            Sorry
+        </p-header>
+        <p>could not retrieve the data you are looking for..</p>
+        <p>Please try again later</p>
+    </p-dialog>
+</div>
+
+<div *ngIf="isCurrentWaiting && isForecastWaiting">
+    <p-progressSpinner class="ui-progress-spinner"></p-progressSpinner>
+</div>

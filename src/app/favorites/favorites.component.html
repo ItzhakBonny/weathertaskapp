@@ -1,0 +1,13 @@
+<div class="favorites">
+    <h1>Your favorite cities</h1>
+    <div class="p-grid p-justify-even p-col-12" *ngIf="favorites">
+        <div *ngFor="let favorite of favorites;" class="favoriteBox" [routerLink]="['/home', favorite.cityKey]">
+            <h2>{{favorite.name}}</h2>
+            <span>{{favorite.lastKnownTemp}} {{favorite.tempUnit}}</span>
+            <p>{{favorite.weatherText}}</p>
+        </div>
+    </div>
+    <div *ngIf="favorites.length == 0" class="noFavsSubtitle">
+        <p>You haven't saved any favorites</p>
+    </div>
+</div>
